@@ -2,7 +2,7 @@
 
 
 ######################################
-TUFFs:OFF
+TUFF status:TUFFs are in the paths but all notches are OFF (so TUFFs in inputs.anita4_trigeffscan.conf need to be at 1)
 Attenuation: fixed 25 dB variable from Elog 691
 
 
@@ -18,11 +18,11 @@ This directory is used to house the tools and steps for the trigger efficiency s
 
 The data for the TES is taken from elog 691.
 
-The pulse injected into icemc is taken from Channel 1 of Testpico_avg_33dB+25dB...root and "trimmed" (timing window edited). The macros in this directory take trim the pulse and produce the output that was then injected into icemc.
+The pulse injected into icemc is taken from Channel 1 of Testpico_avg_33dB+25dB...root and "trimmed" (timing window edited). The macros in this directory take trim the pulse and produce the output that was then injected into icemc.( the details of this are the script called trim_Avg_Ch1_pulses.C)
 
-The mag-freq was taken for multiple attenuations and the ratio found to see if Channel 1 included variable attenuation or not. (macro included).
+The mag-freq was taken for multiple attenuations and the ratio found to see if Channel 1 included variable attenuation or not. (macro included as plot_freq_mag_graphs.C).
 
-The response of the antennas with the TUFFs ON but all notches off (configK or notches_0_0_0 directory and trigconfigK.imp in anitaBuildTool) were produced with macros included here and credited to Andrew Ludwig.
+The response of the antennas with the TUFFs ON but all notches off (configK or notches_0_0_0 directory and trigconfigK.imp in anitaBuildTool) were produced with macros included here and credited to Andrew Ludwig ().
 
 Macro to plot the maxsnr histogram is included
 
