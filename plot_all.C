@@ -10,6 +10,13 @@
 #include <fstream>
 using namespace std;
 
+void trig_eff_makevalues();
+void plot_trig_eff_att_graph();
+void snr_att_makerootfiles();
+void plot_snr_att_graphs();
+void plot_trig_eff_snr();
+
+
 void plot_all()
 {
   trig_eff_makevalues();
@@ -39,7 +46,7 @@ void trig_eff_makevalues()
   TFile *_file0;
   RawAnitaHeader* h = NULL;
   for(int att=25; att<44; att++){
-    filename = Form("/home/keith/trigscan_tuffresponses_debugging_07_23_18/icemc/efficiencyScanPulseAtAntennaNewTrigger/Att%ddb/SimulatedAnitaHeadFile1.root",att);
+    filename = Form("/home/keith/trigscan_tuffresponses_debugging_07_23_18/icemc/efficiencyScanPulseAtAntennaNewTrigger_A4/Att%ddb/SimulatedAnitaHeadFile1.root",att);
     _file0= TFile::Open(filename);
     t=(TTree*)_file0->Get("headTree");
     t->SetBranchAddress("header",&h);
@@ -118,7 +125,7 @@ void snr_att_makerootfiles()
   TString filename;
   TFile *_file0;
   for(int att=25; att<44; att++){
-    filename = Form("/home/keith/trigscan_tuffresponses_debugging_07_23_18/icemc/efficiencyScanPulseAtAntennaNewTrigger/Att%ddb/SimulatedAnitaTruthFile1.root",att);
+    filename = Form("/home/keith/trigscan_tuffresponses_debugging_07_23_18/icemc/efficiencyScanPulseAtAntennaNewTrigger_A4/Att%ddb/SimulatedAnitaTruthFile1.root",att);
     _file0= TFile::Open(filename);
     t=(TTree*)_file0->Get("truthAnitaTree");
     t->SetBranchAddress("truth",&event);
